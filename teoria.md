@@ -19,10 +19,11 @@ No, si guardan relacion ya que los dos pueden ocurrir en tiempo de ejecucion,?
 
 > En un lenguaje con un sistema de tipos dinámico la sobrecarga de métodos es innata y representa una comodidad dado que permite implementar un mismo método para distintos tipos.
 <[Si|No] [pero]...>
+No, la sobrecarga se resuelve al momento de compilación y por lo tanto es una caracteristica de los lenguajes con tipos estaticos, podemos ver ejemplos de esto en Java que permite la sobrecarga y ruby que no lo permite
 
 > En los lenguajes POO existen los términos interfaz, módulo, clase abstracta, rol, etc; definidos como objetos que pueden encapsular definiciones de clases o implementaciones concretas de métodos.
 <[Si|No] [pero]...>
-Si... buscar el xq
+Si, precisamente porque en los lenguajes POO existe la herencia por medio de la cual objetos puede llamar a metodos o tener caracteristicas de otros objetos, y las interfaces, modulos, etc son objetos
 
 > Los métodos virtuales permiten asociar, al momento de compilar, una implementación de un método sobrecargado con una llamada del mismo; eliminando el **overhead** del despacho dinámico.
 <[Si|No] [pero]...>
