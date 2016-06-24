@@ -1,25 +1,23 @@
 # Definición de Árboles
 
 
-module ArbolBinario
-
-	class Node
-    attr_accessor :value
-    attr_accessor :left
-    attr_accessor :right
-	end
-
-	def inicializar val, left, right
-		@value = val
-		@left = left
-		@right = right
-
-	end
+class ArbolBinario
+  attr_accessor :value
+  attr_accessor :left
+  attr_accessor :right
+  
+  def initialize val, left, right
+      @value = val
+      @left = left
+      @right = right
+  end
 end
 
-module ArbolRosa
-
-	class Node
-    attr_accessor :value
-	end
+	
+class ArbolRosa
+  attr_accessor :value
+  
+  def initialize value
+      @value = val
+  end
 end
