@@ -23,6 +23,19 @@ end
 class Fixnum < Mutador
 
 	def Singular(word)
+		
+	end
+
+	def Uniforme
+	end
+
+	def Oscuro
+	end
+end
+
+class String < Mutador
+
+	def Singular(word)
 		palabra.gsub!(/s/, "S")
 		palabra.gsub!(/i/, "I")
 		palabra.gsub!(/n/, "N")
@@ -60,27 +73,27 @@ class Fixnum < Mutador
 		end
 		wordRight = arrRight.join
 		wordLeft = arrLeft.join
-		wordAll = wordLeft + wordRight
+		wordAll = wordLeft << wordRight
 		puts wordAll
-	end
-end
-
-class String < Mutador
-
-	def Singular(word)
-		
-	end
-
-	def Uniforme
-	end
-
-	def Oscuro
 	end
 end
 
 class Array < Mutador
 
 	def Singular
+		word  = [ "Me", ["He comido",4], [["Mangos"]] ]
+		word.flatten! 
+		arrWord = []
+		length = word.length
+
+		word.each do |x|
+			arrWord.push(x) 
+			if (word.index x).to_i + 1 != length.to_i
+				arrWord.push(" ")
+			end
+		end
+		result = arrWord.join
+		puts result
 	end
 
 	def Uniforme

@@ -4,7 +4,7 @@
 # 					Variable de Clases (@@)
 # 					Variable de Instancia (@)
 
-require 'mod_bfs'
+require './mod_bfs'
 
 class ArbolBinario
   include Bfs
