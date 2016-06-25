@@ -45,6 +45,7 @@ class Fixnum < Mutador
 	# hay que redondear ==> sum / lenght or sum.to_f / lenght
 	def Uniforme(num)
 		
+		num = redondeo(num)
 		num2 = num.to_s.split("").map(&:to_i)
 		sum = 0
 		length = num2.length
@@ -54,7 +55,8 @@ class Fixnum < Mutador
 				sum = sum + x	
 			end
 			sum = sum / length
-			sum.ceil!
+			sum = redondeo(sum)
+			puts sum
 		end
 	end
 
