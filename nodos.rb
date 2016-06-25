@@ -20,13 +20,42 @@ class Mutador
 
 end
 
+# FALTA VERIFICAR QUE OCURRA SI EL DIGITO ES MAYOR QUE 10
 class Fixnum < Mutador
 
-	def Singular(word)
+	def Singular(num)
 		
+		num2 = num.to_s.split("").map(&:to_i)
+		sum = 0
+		length = num2.length
+
+		if length > 1
+			num2.each do |x|
+				if (num2.index x).to_i + 1 != length.to_i
+					sum = sum + x	
+				elsif (num2.index x).to_i + 1 == length.to_i
+					sum = sum*x
+				end
+			end
+		end
 	end
 
-	def Uniforme
+
+	# Verificar si el promedio puede ser un real o tambien
+	# hay que redondear ==> sum / lenght or sum.to_f / lenght
+	def Uniforme(num)
+		
+		num2 = num.to_s.split("").map(&:to_i)
+		sum = 0
+		length = num2.length
+
+		if length > 1
+			num2.each do |x|
+				sum = sum + x	
+			end
+			sum = sum / length
+			sum.ceil!
+		end
 	end
 
 	def Oscuro
