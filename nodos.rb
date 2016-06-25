@@ -20,7 +20,7 @@ class Mutador
 
 end
 
-# FALTA VERIFICAR QUE OCURRA SI EL DIGITO ES MAYOR QUE 10
+# FALTA PREGUNTAR SOBRE EL REDONDEO
 class Fixnum < Mutador
 
 	def Singular(num)
@@ -131,3 +131,17 @@ class Array < Mutador
 	def Oscuro
 	end
 end
+
+
+def redondeo (x)
+	valorEntero = Integer(x)
+	if (x - valorEntero >= 0.5)
+    	return valorEntero + 1
+	else
+   		return valorEntero
+	end
+end
+
+x = 54.23
+y = 43.6
+
