@@ -22,6 +22,15 @@ end
 
 class Fixnum < Mutador
 
+  def redondeo (x)
+    valorEntero = Integer(x)
+    if (x - valorEntero >= 0.5)
+        return valorEntero + 1
+    else
+       return valorEntero
+    end
+  end
+  
 	def Singular(word)
 		
 	end
@@ -102,3 +111,7 @@ class Array < Mutador
 	def Oscuro
 	end
 end
+
+x = 54.23
+y = 43.6
+

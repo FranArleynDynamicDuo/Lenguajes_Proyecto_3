@@ -52,8 +52,10 @@ puts ''
 
 puts 'Probando Iterador'
 x.each do |child|
-  puts child.value
+  print child.value
+  print " "
 end
+puts ''
 puts ''
 
 puts 'Probando bfs sin bloque'
@@ -63,3 +65,6 @@ puts ''
 puts 'Probando bfs con bloque'
 x.bfs {|n| puts "Number #{n.value}"}
 puts ''
+
+puts 'Probando recoger'
+x.recoger {|n| next n.value == 5 || n.value == 10}
