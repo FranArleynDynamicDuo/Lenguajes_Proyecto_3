@@ -4,8 +4,10 @@
 # 					Variable de Clases (@@)
 # 					Variable de Instancia (@)
 
+require 'mod_bfs'
 
 class ArbolBinario
+  include Bfs
 	attr_accessor :value
 	attr_accessor :left
 	attr_accessor :right
@@ -17,17 +19,9 @@ class ArbolBinario
   	end
 
   	def each &block
-  		@left.each {|node| yield node} unless @left.nil?
-  		yield self
-  		@right.each {|node| yield node} unless @right.nil?
+  		yield @left
+  		yield @right
   	end
-
-  	def get
-  	end
-
-  	def set
-  	end
-
 end
 
 	
@@ -41,13 +35,24 @@ class ArbolRosa
   end
 
   def each &block
-
-
+    @array.each do |element|
+       yield element
+    end
   end
 
-  def get
-  end
-
-  def set
-  end
 end
+puts 'ARBOL BINARIO'
+puts ''
+puts 'Probando Constructores'
+y = ArbolBinario.new(2,nil,nil)
+z = ArbolBinario.new(10,nil,nil)
+x = ArbolBinario.new(5,y,z)
+
+puts x
+puts ''
+
+puts 'Probando Iterador'
+x.each do |child|
+        puts child.value
+end
+puts ''
