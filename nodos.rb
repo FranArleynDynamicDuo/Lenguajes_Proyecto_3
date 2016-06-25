@@ -25,6 +25,7 @@ class Fixnum < Mutador
 
 	def Singular(num)
 		
+		num = redondeo(num)
 		num2 = num.to_s.split("").map(&:to_i)
 		sum = 0
 		length = num2.length
