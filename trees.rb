@@ -6,8 +6,7 @@
 
 require 'mod_bfs'
 
-class ArbolBinario
-  include Bfs
+class ArbolBinario < include Bfs
 	attr_accessor :value
 	attr_accessor :left
 	attr_accessor :right
@@ -53,6 +52,14 @@ puts ''
 
 puts 'Probando Iterador'
 x.each do |child|
-        puts child.value
+  puts child.value
 end
+puts ''
+
+puts 'Probando bfs sin bloque'
+x.bfs
+puts ''
+
+puts 'Probando bfs con bloque'
+x.bfs {|n| puts "Number #{n.value}"}
 puts ''
