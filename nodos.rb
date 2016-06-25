@@ -22,19 +22,53 @@ end
 
 class Fixnum < Mutador
 
-	def Singular
+	def Singular(word)
+		palabra.gsub!(/s/, "S")
+		palabra.gsub!(/i/, "I")
+		palabra.gsub!(/n/, "N")
+		palabra.gsub!(/g/, "G")
+		palabra.gsub!(/u/, "U")
+		palabra.gsub!(/l/, "L")
+		palabra.gsub!(/a/, "A")
+		palabra.gsub!(/r/, "R")
+		puts palabra
 	end
 
-	def Uniforme
+	def Uniforme(word)
+		word = word.split("")
+		word.each do |x|
+			if (word.index x).to_i % 2 == 0 
+				x.upcase!
+			else
+				x.downcase!
+			end
+		end
+		result = word.join
+		puts word
 	end
 
-	def Oscuro
+	def Oscuro(word)
+		arrRight = []
+		arrLeft = []
+		word.each do |x|
+
+			if (word.index x).to_i % 2 == 0 
+				arrRight.push(x)
+			else
+				arrLeft.push(x)
+			end
+		end
+		wordRight = arrRight.join
+		wordLeft = arrLeft.join
+		wordAll = wordLeft + wordRight
+		puts wordAll
 	end
 end
 
 class String < Mutador
 
-	def Singular
+	def Singular(word)
+		
 	end
 
 	def Uniforme

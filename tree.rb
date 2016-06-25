@@ -10,16 +10,16 @@ class ArbolBinario
 	attr_accessor :left
 	attr_accessor :right
   
-	def initialize val, left, right
-		value = val
-		left = left
-		right = right
+	def initialize(val, left=nil, right=nil)
+		@value = val
+		@left = left
+		@right = right
   	end
 
-  	def each 
-  		left.each {|node| yield node} unless @left.nil?
+  	def each &block
+  		@left.each {|node| yield node} unless @left.nil?
   		yield self
-  		right.each {|node| yield node} unless @right.nil?
+  		@right.each {|node| yield node} unless @right.nil?
   	end
 
   	def get
@@ -33,9 +33,14 @@ end
 	
 class ArbolRosa
   attr_accessor :value
-  
-  def initialize value
+  attr_accessor :array
+
+  def initialize(val, *sons)
       @value = val
+      @array = sons
+  end
+
+  def each &block
   end
 
   def get
