@@ -29,9 +29,10 @@ class Fixnum < Mutador
 		num = redondeo(num)
 		# Se parsea el digito y se convierte en un arreglo
 		num2 = num.to_s.split("").map(&:to_i)
-		# Se inicializa la variable sum (contener el calculo de los digitos)
+		# Se inicializa la variable i y sum (contener el calculo de los digitos)
 		sum = 0
-		# Se inicializa la variable sum (contener el calculo de los digitos)
+		i = 0
+		# Se Calcula el largo del arreglo
 		length = num2.length
 
 		# Se verifica que el numero tenga mas de un digito
@@ -40,13 +41,14 @@ class Fixnum < Mutador
 			num2.each do |x|
 				# Si no es el ultimo valor del arreglo, se suman cada
 				# uno de sus digitos
-				if (num2.index x).to_i + 1 != length.to_i
+				if i + 1 != length.to_i
 					sum = sum + x	
 				# Si es el ultimo valor del arreglo se multiplica
 				# con la sumatoria calculada anteriormente
 				elsif (num2.index x).to_i + 1 == length.to_i
 					sum = sum*x
 				end
+				i += 1
 			end
 			puts sum
 			return sum
@@ -67,7 +69,7 @@ class Fixnum < Mutador
 		num2 = num.to_s.split("").map(&:to_i)
 		# Se inicializa la variable sum (contener el calculo de los digitos)
 		sum = 0
-		# Se inicializa la variable sum (contener el calculo de los digitos)
+		# Se Calcula el largo del arreglo
 		length = num2.length
 
 		# Se verifica que el numero tenga mas de un digito
@@ -90,7 +92,33 @@ class Fixnum < Mutador
 		end
 	end
 
-	def Oscuro
+	def Oscuro1(num)
+		# Se redonde el numero
+		num = redondeo(num)
+		# Se parsea el digito y se convierte en un arreglo
+		num2 = num.to_s.split("").map(&:to_i)
+		# Se inicializa la variable i y arr (contener el calculo de los digitos)
+		arr = []
+		i = 0
+		# Se Calcula el largo del arreglo
+		length = num2.length
+		# Se verifica que el numero tenga mas de un digito
+		if length > 1
+			# Se itera en el arreglo se suman cada
+			# uno de sus digitos
+			num2.each do |x|
+				if i % 2 == 0
+					arr.push(x)
+				end 
+				i += 1
+			end
+			result = arr.join
+			puts result
+			return result
+		else 
+			puts num
+			return num
+		end
 	end
 end
 
@@ -116,22 +144,24 @@ class String < Mutador
 	def Uniforme(word)
 		# Se convierte la palabra en un arreglo
 		word = word.split("")
+		i = 0
 		# Se itera en el arreglo que contiene todas
 		# las letras de la palabra, si el index del arreglo
 		# es par se cambia la letra a mayuscula y si el
 		# index es impar se convierte en minuscula
 		word.each do |x|
-			if (word.index x).to_i % 2 == 0 
+			if i % 2 == 0 
 				x.upcase!
 			else
 				x.downcase!
 			end
+			i += 1
 		end
 		# Se convierte el arreglo en un string
 		result = word.join
 		puts result
 		# Retornamos la palabra
-		return result
+		return word
 	end
 
 	def Oscuro(word)
@@ -139,6 +169,7 @@ class String < Mutador
 		arrRight = []
 		# Se inicializa el Arreglo Izquierdo
 		arrLeft = []
+		i = 0
 		# Se convierte la palabra en un arreglo
 		word = word.split("")
 		# Se itera en el arreglo
@@ -146,13 +177,14 @@ class String < Mutador
 
 			# Si el index del arreglo es par se guarda
 			# en el arreglo derecho
-			if (word.index x).to_i % 2 == 0 
+			if i % 2 == 0 
 				arrRight.push(x)
 			# Si el index del arreglo es impar se guarda
 			# en el arreglo derecho
 			else
 				arrLeft.push(x)
 			end
+			i += 1
 		end
 		# Se convierte el arreglo derecho e izquiero en string
 		wordRight = arrRight.join
@@ -167,23 +199,25 @@ end
 
 class Array < Mutador
 
-	def Singular(word)
+	def Singular(arr)
 		# Se aplana el arreglo
-		word.flatten! 
+		arr.flatten! 
 		# Se inicializa la variable
 		arrWord = []
+		i = 0
 		# Se calcula el tamaño del arreglo
-		length = word.length
+		length = arr.length
 		# Se itera en el arreglo
-		word.each do |x|
+		arr.each do |x|
 			# Se guarda cada valor en el arreglo
 			# inicializado
 			arrWord.push(x)
 			# Se agrega un espacio cada vez que se agrege una
 			# palabra al arreglo, menos al ultimo valor 
-			if (word.index x).to_i + 1 != length.to_i
+			if i + 1 != length.to_i
 				arrWord.push(" ")
 			end
+			i += 1
 		end
 		# Transformamos el arreglo en un String
 		result = arrWord.join
