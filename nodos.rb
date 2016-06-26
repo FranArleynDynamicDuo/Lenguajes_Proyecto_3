@@ -48,9 +48,12 @@ class Fixnum < Mutador
 					sum = sum*x
 				end
 			end
+			puts sum
+			return sum
+		else 
+			puts num
+			return num
 		end
-		# Retorna el calculo
-		return sum
 	end
 
 
@@ -75,14 +78,16 @@ class Fixnum < Mutador
 				sum = sum + x	
 			end
 			# Se calcula el promedio
-			sum = sum / length
+			sum = sum.to_f /  length
 			# Se redonde el resultado en dado caso que
 			# que sea necesario
 			sum = redondeo(sum)
 			puts sum
+			return sum
+		else 
+			puts num
+			return num
 		end
-		# Retorna los calculos
-		return sum
 	end
 
 	def Oscuro
@@ -124,9 +129,9 @@ class String < Mutador
 		end
 		# Se convierte el arreglo en un string
 		result = word.join
-		puts word
+		puts result
 		# Retornamos la palabra
-		return word
+		return result
 	end
 
 	def Oscuro(word)
@@ -203,7 +208,4 @@ def redondeo (x)
    		return valorEntero
 	end
 end
-
-x = 54.23
-y = 43.6
 
