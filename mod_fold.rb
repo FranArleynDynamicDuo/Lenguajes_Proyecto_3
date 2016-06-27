@@ -2,11 +2,19 @@
 
 module Dfs
   
-  def Dfs.dfs
-    
+  def dfs
+    if block_given?
+      self.each do |child|
+        child.dfs block
+        yield child
+      end
+      yield self
+    else
+      puts 'No se dio ningun bloque asi que imprimiremos el recorrido'
+    end
   end
   
-  def Dfs.fold
+  def fold
     
   end
 end

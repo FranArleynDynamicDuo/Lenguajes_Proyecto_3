@@ -5,8 +5,9 @@
 # 					Variable de Instancia (@)
 
 require './mod_bfs'
+require './mod_fold'
 
-class ArbolBinario < include Bfs
+class ArbolBinario < include Bfs,Dfs
 	attr_accessor :value
 	attr_accessor :left
 	attr_accessor :right
@@ -17,14 +18,18 @@ class ArbolBinario < include Bfs
 		@right = right
   	end
 
-  	def each &block
-  		yield @left
-  		yield @right
+  	def each
+      unless @left.nil?
+        yield @left
+      end
+      unless @right.nil?
+        yield @right
+      end
   	end
 end
 
 	
-class ArbolRosa
+class ArbolRosa < include Bfs,Dfs
   attr_accessor :value
   attr_accessor :array
 
@@ -35,7 +40,9 @@ class ArbolRosa
 
   def each &block
     @array.each do |element|
-       yield element
+      unless element.nil?
+        yield element
+      end
     end
   end
 
@@ -44,7 +51,8 @@ puts 'ARBOL BINARIO'
 puts ''
 puts 'Probando Constructores'
 y = ArbolBinario.new(2,nil,nil)
-z = ArbolBinario.new(10,nil,nil)
+w = ArbolBinario.new(11,nil,nil)
+z = ArbolBinario.new(10,w,nil)
 x = ArbolBinario.new(5,y,z)
 
 puts x
@@ -67,4 +75,8 @@ x.bfs {|n| puts "Number #{n.value}"}
 puts ''
 
 puts 'Probando recoger'
-x.recoger {|n| next n.value == 5 || n.value == 10}
+x.recoger {|n| next n.value == 5 || n.value == 10 || n.value == 11}
+  
+puts 'Probando dfs con bloque'
+x.dfs {|n| puts "Number #{n.value}"}
+puts ''

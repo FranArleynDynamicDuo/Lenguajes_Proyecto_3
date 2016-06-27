@@ -10,18 +10,19 @@ module Bfs
       # Mientras nuestra cola no este vacia, aplicaremos el procedimiento
       while(queue.size != 0)
         actualNode = queue.shift
-          # Ejecutamos el bloque con el nodo actual
-          yield actualNode
-          # Imprimimos el valor
-          puts actualNode.value
-      end
-      # Iteramos sobre los hijos del nodo
-      actualNode.each do |child|
-        # Agregamos al hijo si no es nil
-        unless child.nil?
-          queue.push(child)
+        # Ejecutamos el bloque con el nodo actual
+        yield actualNode
+        # Imprimimos el valor
+        puts actualNode.value
+        # Iteramos sobre los hijos del nodo
+        actualNode.each do |child|
+          # Agregamos al hijo si no es nil
+          unless child.nil?
+            queue.push(child)
+          end
         end
       end
+      
     else
       puts 'No se dio ningun bloque asi que imprimiremos el recorrido'
     end
