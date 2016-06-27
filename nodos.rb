@@ -201,6 +201,15 @@ class Oscuro < Mutador
 	end
 
 	def isArray(arr)
+		# Calculamos el largo del arreglo
+		length = arr.length
+		# Calculamos cuanto seria el 50% de los elementos
+		# incluyendo el redondeo
+		porcent = redondeo(lenght*0.5)
+		# Se eligen el 50% de los valores
+		arr = arr.sample(porcent)!
+
+		# FALTA QUE SE LE APLIQUE EL MUTADOR
 	end
 
 end
