@@ -215,14 +215,14 @@ end
 class String
 
 	def receive(nodo)
-		nodo.isFixnum(self)
+		nodo.isString(self)
 	end
 end
 
 class Array
 
 	def receive(nodo)
-		nodo.isFixnum(self)
+		nodo.isArray(self)
 	end
 end
 
