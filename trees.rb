@@ -76,6 +76,7 @@ puts ''
 
 puts 'Probando recoger'
 x.recoger {|n| next n.value == 5 || n.value == 10 || n.value == 11}
+puts ''
   
 puts 'Probando dfs con bloque'
 x.dfs {|n| puts "Number #{n.value}"}

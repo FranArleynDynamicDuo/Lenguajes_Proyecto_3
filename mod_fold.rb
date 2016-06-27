@@ -5,8 +5,7 @@ module Dfs
   def dfs
     if block_given?
       self.each do |child|
-        child.dfs block
-        yield child
+        yield child.dfs  {|x|x}
       end
       yield self
     else
