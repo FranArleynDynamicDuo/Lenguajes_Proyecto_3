@@ -4,10 +4,12 @@ module Dfs
   
   def dfs
     if block_given?
-      self.each do |child|
-        yield child.dfs  {|x|x}
-      end
       yield self
+      self.each do |child|
+        child.dfs do |node|
+          yield node
+        end
+      end
     else
       puts 'No se dio ningun bloque asi que imprimiremos el recorrido'
     end

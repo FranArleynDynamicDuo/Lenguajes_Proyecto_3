@@ -207,7 +207,7 @@ class Oscuro < Mutador
 		# incluyendo el redondeo
 		porcent = redondeo(lenght*0.5)
 		# Se eligen el 50% de los valores
-		arr = arr.sample(porcent)!
+		arr = arr.sample(porcent)
 
 		# FALTA QUE SE LE APLIQUE EL MUTADOR
 	end

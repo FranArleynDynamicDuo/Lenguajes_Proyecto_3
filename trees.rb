@@ -50,7 +50,8 @@ end
 puts 'ARBOL BINARIO'
 puts ''
 puts 'Probando Constructores'
-y = ArbolBinario.new(2,nil,nil)
+f = ArbolBinario.new(7,nil,nil)
+y = ArbolBinario.new(2,f,nil)
 w = ArbolBinario.new(11,nil,nil)
 z = ArbolBinario.new(10,w,nil)
 x = ArbolBinario.new(5,y,z)
