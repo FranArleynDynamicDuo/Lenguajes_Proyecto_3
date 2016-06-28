@@ -136,9 +136,11 @@ class Uniforme < Mutador
 	end
 
 	def isArray(arr)
+		arrResult = []
 		arr.each do |x|
-
+			arrResult += x.receive(Uniforme.new())
 		end
+		return arrResult
 	end
 
 end
@@ -211,10 +213,12 @@ class Oscuro < Mutador
 		porcent = redondeo(lenght*0.5)
 		# Se eligen el 50% de los valores
 		arr = arr.sample(porcent)
+		arrResult = []
 
 		arr.each do |x|
-
+			arrResult += x.receive(Oscuro.new())
 		end
+		return arrResult
 	end
 
 end
