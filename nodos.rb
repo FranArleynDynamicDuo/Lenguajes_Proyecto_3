@@ -75,10 +75,10 @@ class Singular < Mutador
 			i += 1
 		end
 		# Transformamos el arreglo en un String
-		result = arrWord.join
-		puts result
+		arrWord.join!
+		puts arrWord
 		# Retornamos la palabra
-		return result
+		return arrWord
 	end
 
 end
@@ -129,13 +129,16 @@ class Uniforme < Mutador
 			i += 1
 		end
 		# Se convierte el arreglo en un string
-		result = word.join
-		puts result
+		word.join!
+		puts word
 		# Retornamos la palabra
 		return word
 	end
 
 	def isArray(arr)
+		arr.each do |x|
+
+		end
 	end
 
 end
@@ -160,9 +163,9 @@ class Oscuro < Mutador
 				end 
 				i += 1
 			end
-			result = arr.join.to_i
-			puts result
-			return result
+			arr.join.to_i!
+			puts arr
+			return arr
 		else 
 			puts num
 			return num
@@ -191,10 +194,10 @@ class Oscuro < Mutador
 			i += 1
 		end
 		# Se convierte el arreglo derecho e izquiero en string
-		wordRight = arrRight.join
-		wordLeft = arrLeft.join
+		arrRight.join!
+		arrLeft.join!
 		# Se concatenan los string
-		wordAll = wordLeft << wordRight
+		wordAll = arrLeft << arrRight
 		puts wordAll
 		# Se retorna la palabra
 		return wordAll
@@ -207,9 +210,11 @@ class Oscuro < Mutador
 		# incluyendo el redondeo
 		porcent = redondeo(lenght*0.5)
 		# Se eligen el 50% de los valores
-		arr = arr.sample(porcent)!
+		arr = arr.sample(porcent)
 
-		# FALTA QUE SE LE APLIQUE EL MUTADOR
+		arr.each do |x|
+
+		end
 	end
 
 end
@@ -234,8 +239,6 @@ class Array
 		nodo.isArray(self)
 	end
 end
-
-
 
 def redondeo(x)
 	valorEntero = Integer(x)
