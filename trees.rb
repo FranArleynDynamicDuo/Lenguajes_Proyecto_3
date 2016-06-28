@@ -6,6 +6,7 @@
 
 require './mod_bfs'
 require './mod_fold'
+require './nodos'
 
 class ArbolBinario < include Bfs,Dfs
 	attr_accessor :value
