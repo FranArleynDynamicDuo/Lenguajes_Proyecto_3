@@ -16,11 +16,14 @@ module Dfs
           yield node
         end
       end
+    # Si no se recibio un bloque, se termina el procedimiento
     else
       puts 'No se dio ningun bloque asi que imprimiremos el recorrido'
     end
   end
   
+  # Hace un recorrido dfs a un arbol, aplicando una operacion en cada nodo y
+  # acumulando el resultado
   def fold(acum) # {bloque Implicito}
     # Verificamos si se recibio un bloque
     if block_given?
@@ -30,6 +33,7 @@ module Dfs
       end
       # Retornamos el resultado final
       return acum
+    # Si no se recibio un bloque, se termina el procedimiento
     else
       puts 'No se dio ningun bloque asi que imprimiremos el recorrido'
     end    
