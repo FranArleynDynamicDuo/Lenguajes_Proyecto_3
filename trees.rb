@@ -82,3 +82,8 @@ puts ''
 puts 'Probando dfs con bloque'
 x.dfs {|n| puts "Number #{n.value}"}
 puts ''
+
+puts 'Probando fold con bloque'
+result = x.fold(0) {|n,acum| next (acum + n.value)}
+puts "result =  #{result}" 
+puts ''
