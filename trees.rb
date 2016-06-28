@@ -47,10 +47,14 @@ class ArbolRosa < include Bfs,Dfs
   end
 
 end
+
+########################### PRUEBAS ###########################
+
 puts 'ARBOL BINARIO'
 puts ''
 puts 'Probando Constructores'
-y = ArbolBinario.new(2,nil,nil)
+f = ArbolBinario.new(7,nil,nil)
+y = ArbolBinario.new(2,f,nil)
 w = ArbolBinario.new(11,nil,nil)
 z = ArbolBinario.new(10,w,nil)
 x = ArbolBinario.new(5,y,z)
@@ -71,13 +75,26 @@ x.bfs
 puts ''
 
 puts 'Probando bfs con bloque'
-x.bfs {|n| puts "Number #{n.value}"}
+x.bfs {|n| print "#{n.value} "}
+puts ''
 puts ''
 
 puts 'Probando recoger'
-x.recoger {|n| next n.value == 5 || n.value == 10 || n.value == 11}
+respuestaRecoger = x.recoger {|n| next n.value == 5 || n.value == 10 || n.value == 11}
+puts 'Imprimiendo respuestaRecoger'
+respuestaRecoger.each do |element|
+  print element.value
+  print " "
+end
+puts ''
 puts ''
   
 puts 'Probando dfs con bloque'
-x.dfs {|n| puts "Number #{n.value}"}
+x.dfs {|n| print "#{n.value} "}
+puts ''
+puts ''
+
+puts 'Probando fold con bloque'
+result = x.fold(0) {|n,acum| next (acum + n.value)}
+puts "result =  #{result}" 
 puts ''

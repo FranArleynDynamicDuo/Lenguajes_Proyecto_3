@@ -12,8 +12,6 @@ module Bfs
         actualNode = queue.shift
         # Ejecutamos el bloque con el nodo actual
         yield actualNode
-        # Imprimimos el valor
-        puts actualNode.value
         # Iteramos sobre los hijos del nodo
         actualNode.each do |child|
           # Agregamos al hijo si no es nil
@@ -36,19 +34,8 @@ module Bfs
       # Si el predicado del bloque es true agregamos el elemento a la lista
       if block.call(child)
         listaNodos.push(child)
-        puts 'se evaluo true!'
-      else
-        puts 'se evaluo false!'
       end
     end
-    puts ''
-    puts 'Imprimiendo lista'
-    listaNodos.each do |elemento|
-      print elemento.value
-      print " "
-    end
+    return listaNodos
   end
-  
-  
-  
 end
