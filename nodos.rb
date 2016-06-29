@@ -75,7 +75,7 @@ class Singular < Mutador
 			i += 1
 		end
 		# Transformamos el arreglo en un String
-		arrWord.join!
+		arrWord = arrWord.join
 		puts arrWord
 		# Retornamos la palabra
 		return arrWord
@@ -129,7 +129,7 @@ class Uniforme < Mutador
 			i += 1
 		end
 		# Se convierte el arreglo en un string
-		word.join!
+		word = word.join
 		puts word
 		# Retornamos la palabra
 		return word
@@ -165,7 +165,7 @@ class Oscuro < Mutador
 				end 
 				i += 1
 			end
-			arr.join.to_i!
+			arr = arr.join.to_i
 			puts arr
 			return arr
 		else 
@@ -196,8 +196,8 @@ class Oscuro < Mutador
 			i += 1
 		end
 		# Se convierte el arreglo derecho e izquiero en string
-		arrRight.join!
-		arrLeft.join!
+		arrRight = arrRight.join
+		arrLeft = arrLeft.join
 		# Se concatenan los string
 		wordAll = arrLeft << arrRight
 		puts wordAll
@@ -252,4 +252,3 @@ def redondeo(x)
    		return valorEntero
 	end
 end
-
