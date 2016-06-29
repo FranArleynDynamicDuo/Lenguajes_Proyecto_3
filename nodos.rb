@@ -138,7 +138,7 @@ class Uniforme < Mutador
 	def isArray(arr)
 		arrResult = []
 		arr.each do |x|
-			arrResult += x.receive(Uniforme.new())
+			arrResult.push( x.receive(Uniforme.new()) )
 		end
 		return arrResult
 	end
@@ -210,13 +210,13 @@ class Oscuro < Mutador
 		length = arr.length
 		# Calculamos cuanto seria el 50% de los elementos
 		# incluyendo el redondeo
-		porcent = redondeo(lenght*0.5)
+		porcent = redondeo(length*0.5)
 		# Se eligen el 50% de los valores
 		arr = arr.sample(porcent)
 		arrResult = []
 
 		arr.each do |x|
-			arrResult += x.receive(Oscuro.new())
+			arrResult.push( x.receive(Oscuro.new()) )
 		end
 		return arrResult
 	end
