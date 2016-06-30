@@ -26,7 +26,7 @@ Si, precisamente porque en los lenguajes POO existe la herencia por medio de la 
 
 > Los métodos virtuales permiten asociar, al momento de compilar, una implementación de un método sobrecargado con una llamada del mismo; eliminando el **overhead** del despacho dinámico.
 <[Si|No] [pero]...>
-si, porque el se busca directamente en la Virtual Tables, 
+si, porque el se busca directamente en el Virtual Tables, en vez de estar buscando el metodo en las clases de sus ancestros eliminando asi el overhead del despacho dinamico 
 
 > Cuando un lenguaje de POO tiene herencia simple no ocurre el problema del diamante pero de igual forma pueden existir llamadas ambiguas de métodos, dado que incorporar interfaces, módulos, protocolos, etc, no evita colisión de nombres.
 <[Si|No] [pero]...>
