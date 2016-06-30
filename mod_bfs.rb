@@ -28,7 +28,7 @@ module Bfs
   
   # Hace un recorrido bfs a un arbol, y guarda cada nodo que cumpla con la condicion
   # del bloque del predicado
-  def recoger (&block)
+  def recoger (block)
     listaNodos = []
     self.bfs do |child|
       # Si el predicado del bloque es true agregamos el elemento a la lista
