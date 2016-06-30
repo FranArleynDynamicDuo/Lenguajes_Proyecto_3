@@ -29,7 +29,6 @@ class Singular < Mutador
 				end
 				i += 1
 			end
-			puts sum
 			return sum
 		else 
 			puts num
@@ -76,7 +75,6 @@ class Singular < Mutador
 		end
 		# Transformamos el arreglo en un String
 		arrWord = arrWord.join
-		puts arrWord
 		# Retornamos la palabra
 		return arrWord
 	end
@@ -104,7 +102,6 @@ class Uniforme < Mutador
 			# Se redonde el resultado en dado caso que
 			# que sea necesario
 			sum = redondeo(sum)
-			puts sum
 			return sum
 		else 
 			puts num
@@ -130,7 +127,6 @@ class Uniforme < Mutador
 		end
 		# Se convierte el arreglo en un string
 		word = word.join
-		puts word
 		# Retornamos la palabra
 		return word
 	end
@@ -166,10 +162,8 @@ class Oscuro < Mutador
 				i += 1
 			end
 			arr = arr.join.to_i
-			puts arr
 			return arr
 		else 
-			puts num
 			return num
 		end
 	end
@@ -200,7 +194,6 @@ class Oscuro < Mutador
 		arrLeft = arrLeft.join
 		# Se concatenan los string
 		wordAll = arrLeft << arrRight
-		puts wordAll
 		# Se retorna la palabra
 		return wordAll
 	end

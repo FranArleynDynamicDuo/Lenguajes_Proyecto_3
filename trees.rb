@@ -52,6 +52,14 @@ end
 ########################### PRUEBAS ###########################
 
 puts 'ARBOL BINARIO'
+
+a = ArbolBinario.new( 10 ) # Instancio la clase valor 5 y no tiene hijos
+a.value.receive(Singular.new())
+puts a.value
+
+########################### PRUEBAS ###########################
+
+puts 'ARBOL BINARIO'
 puts ''
 puts 'Probando Constructores'
 f = ArbolBinario.new(7,nil,nil)
