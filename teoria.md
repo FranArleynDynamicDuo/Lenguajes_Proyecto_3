@@ -6,11 +6,11 @@
 
 > Los lenguajes de programación orientados a objetos que poseen herencia simple están limitados a incorporar comportamientos de un solo ancestro al momento de definir una clase.
 <[Si|No] [pero]...>
-Si, pero se considera que tiene un ancestro si no nos importa todos los ancestros de la clase padre, mientras que si consideramos todos los ancestros de la clase padre entonces se puede decir que se tiene mas de un ancestro. 
+Depende, se considera que tiene un ancestro si no nos importa todos los ancestros de la clase padre, mientras que si consideramos todos los ancestros de la clase padre entonces se puede decir que se tiene mas de un ancestro. 
 
 > Lenguajes de POO con un sistemas de tipos estático (C++, Java, C\#) no tienen la posibilidades de elegir la implementación de un método a tiempo de ejecución (despacho dinámico).
 <[Si|No] [pero]...>
-No, porque en los Lenguajes de POO con sistemas de tipos estaticos tienen es un método de tiempo de compilación, los que tienen sistemas de tipo dinámico si cumplen con el método a tiempo de ejecución.
+No, porque ya que los tres lenguajes tienen śistemas de tipos estáticos, Java trabaja con despacho dinámico. 
 
 > La introspección y reflexibidad son conceptos que se manejan en la POO pero no guardar ninguna relación entre sí.
 <[Si|No] [pero]...>
@@ -38,4 +38,4 @@ Si, el paso de mensaje se suele implementar como llamadas a los metodos de otros
 
 > Sin importar la herencia del lenguaje de POO, una clase podría tener más de un ancestro.
 <[Si|No] [pero]...>
-No, si importa la herencia debido a que en herencia multiple se tiene mas de un ancestro, pero en el caso de herencia simple hay que considerar si se toma en cuenta los ancestros de la clase padre. 
+Depende, si importa la herencia debido a que en herencia multiple se tiene mas de un ancestro, pero en el caso de herencia simple hay que considerar si se toma en cuenta los ancestros de la clase padre. 
